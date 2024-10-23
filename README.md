@@ -20,35 +20,17 @@ git clone https://github.com/MaheshRautrao/React-Todo-list.git
 ![image](https://github.com/user-attachments/assets/2da868e1-2093-4e6f-ad5f-9c20f6411f49)
 
 
-
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-kubectl version --client
-
-curl -sL https://eksctl.io/install | bash
-eksctl version
-
-sudo apt-get update
-sudo apt-get install docker.io
-sudo systemctl start docker
-sudo systemctl enable docker
-docker --version
-sudo usermod -aG docker ${USER}
-
 **#Dockerfile:**
+
+```yaml
 FROM node:14
-
 WORKDIR /app
-
 COPY package.json ./
-
 RUN npm install
-
 COPY . .
-
 EXPOSE 3000
-
 CMD ["npm", "start"]
+```
 
 ![image](https://github.com/user-attachments/assets/4d55b6ca-0619-476e-9e12-0215b1ac0871)
 
@@ -64,7 +46,20 @@ docker run -p 3000:3000 react-todo-app
 ![image](https://github.com/user-attachments/assets/ec748f63-0103-4f0c-838c-8c38a31433fa)
 
 ![image](https://github.com/user-attachments/assets/b94b9a5b-c987-412c-91ee-ec7b31631f63)
+
+![image](https://github.com/user-attachments/assets/f295adb3-509a-4300-a9af-a9a2cbeca9e7)
+
+**EKS Cluster Creation:**
+
+```yaml
+eksctl create cluster --version 1.28 --name react-app-cluster --region eu-central-1 --nodes 2 --node-type t3.medium --nodes-min 2 --nodes-max 2 --managed
+```
+
+
+
 **#Create a deployment.yaml file:**
+
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -84,9 +79,11 @@ spec:
         image: react-todo-app:latest
         ports:
         - containerPort: 3000
-
+```
 
 **#Create a service.yaml file:**
+
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -99,12 +96,14 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3000
-
+```
 
 **#Deploy the Application to Kubernetes**
+
+```yaml
 microk8s kubectl apply -f deployment.yaml
 microk8s kubectl apply -f service.yaml
-
+```
 
 **#Verify the Deployment:**
 Check if the pods and services are running properly:
