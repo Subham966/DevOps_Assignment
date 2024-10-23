@@ -19,7 +19,9 @@ git clone https://github.com/MaheshRautrao/React-Todo-list.git
 
 ![image](https://github.com/user-attachments/assets/2da868e1-2093-4e6f-ad5f-9c20f6411f49)
 
+![image](https://github.com/user-attachments/assets/ec748f63-0103-4f0c-838c-8c38a31433fa)
 
+![image](https://github.com/user-attachments/assets/b94b9a5b-c987-412c-91ee-ec7b31631f63)
 
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
