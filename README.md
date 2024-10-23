@@ -96,6 +96,23 @@ eksctl create cluster --version 1.28 --name react-app-cluster --region eu-centra
 
 ![image](https://github.com/user-attachments/assets/697efb9b-87e2-4214-bbdc-d825f000acd4)
 
+**Build and Push the Docker Image to ECR:**
+
+
+
+![image](https://github.com/user-attachments/assets/69d6300e-ee17-4f26-94c3-fadae5df5fa5)
+
+![image](https://github.com/user-attachments/assets/4b544b5b-1fea-4840-913e-c73fe86fa93d)
+
+
+![image](https://github.com/user-attachments/assets/189b65bd-bf69-4059-9e6c-590116aa25c8)
+
+![image](https://github.com/user-attachments/assets/c2e69897-b34d-48eb-84b2-f113b4c014c9)
+
+![image](https://github.com/user-attachments/assets/2985a19b-f395-4d5a-a2c7-b9feb8073b08)
+
+
+
 **#Create a deployment.yaml file:**
 
 ```yaml
@@ -115,9 +132,9 @@ spec:
     spec:
       containers:
       - name: react-todo-app
-        image: react-todo-app:latest
+        image: 905418298876.dkr.ecr.eu-central-1.amazonaws.com/react-todo:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
 ```
 
 **#Create a service.yaml file:**
@@ -134,8 +151,9 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 80
 ```
+
 
 **#Deploy the Application to Kubernetes**
 
@@ -144,6 +162,10 @@ microk8s kubectl apply -f deployment.yaml
 microk8s kubectl apply -f service.yaml
 ```
 
+![image](https://github.com/user-attachments/assets/60d262ab-9f70-4af6-be81-cd8f440382db)
+
+
+
 **#Verify the Deployment:**
 Check if the pods and services are running properly:
 
@@ -151,6 +173,12 @@ Check if the pods and services are running properly:
 microk8s.kubectl get pods
 microk8s.kubectl get svc
 ```
+![image](https://github.com/user-attachments/assets/27947386-c186-407a-9882-e3494f805583)
 
+```yaml
+http://aeba97c523e5647afbbb84bc6151a178-741773144.eu-central-1.elb.amazonaws.com/
+```
+
+![image](https://github.com/user-attachments/assets/9a652d60-5441-40e0-854b-5a39f3b8c537)
 
 
