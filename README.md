@@ -18,6 +18,14 @@ aws --version
 
 ![image](https://github.com/user-attachments/assets/d8916d75-2775-4d2c-a870-e7add6d894d0)
 
+**Clone the React Application
+First, clone the provided React project from GitHub:**
+
+git clone https://github.com/MaheshRautrao/React-Todo-list.git
+![image](https://github.com/user-attachments/assets/af8d5379-fc9c-4f53-bbdf-caaa1551199e)
+
+![image](https://github.com/user-attachments/assets/2da868e1-2093-4e6f-ad5f-9c20f6411f49)
+
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client
