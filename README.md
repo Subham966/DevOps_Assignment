@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
       - name: react-todo-app
-        image: 9078006440.dkr.ecr.eu-central-1.amazonaws.com/react-todo:latest
+        image: 6162616261.dkr.ecr.eu-central-1.amazonaws.com/react-todo:latest   #Update your image here
         ports:
         - containerPort: 80
 ```
