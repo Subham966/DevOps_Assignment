@@ -94,8 +94,6 @@ eksctl create cluster --version 1.28 --name react-app-cluster --region eu-centra
 
 ![image](https://github.com/user-attachments/assets/b99a939c-7634-4872-9b5a-4c754b99e738)
 
-![image](https://github.com/user-attachments/assets/980263f3-3409-45e4-a584-3208edec05ff)
-
 ![image](https://github.com/user-attachments/assets/e7a62577-0389-4a9a-9c53-127617c862d2)
 
 ![image](https://github.com/user-attachments/assets/697efb9b-87e2-4214-bbdc-d825f000acd4)
