@@ -66,11 +66,15 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /app/build /usr/share/nginx/html
 ```
 
-![image](https://github.com/user-attachments/assets/4d55b6ca-0619-476e-9e12-0215b1ac0871)
+![image](https://github.com/user-attachments/assets/24452932-5e98-45e1-a8e8-8e5cbf367c6c)
+
 
 ```yaml
 docker build -t react-todo-app .
 ```
+![image](https://github.com/user-attachments/assets/455353db-61e6-41b2-ad1c-6af85b0b651b)
+
+![image](https://github.com/user-attachments/assets/e17894b3-539f-43bc-9eed-35b4b2aa8b7f)
 
 
 **EKS Cluster Creation:**
